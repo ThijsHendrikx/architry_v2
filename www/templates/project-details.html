@@ -1,0 +1,26 @@
+<ion-view view-title="{{project.title}}" ng-init="init()">
+  
+  <ion-content class="padding">
+      
+      <div class="item item-image">
+      <img ng-src="{{project.thumbnail}}">
+      </div>
+      
+      <p>
+        {{project.description}}
+      </p>
+
+
+
+
+      <ion-list>
+
+      <a class="item item-thumbnail-left" ng-repeat="view in project.views" href="#/projects/details/{{view.viewId}}">
+
+          <img src="{{view.imgLeftUrl}}"><h2>{{view.viewId}} {{view.title}} </h2></ion-item>
+          
+      </a>
+
+
+  </ion-content>
+</ion-view>

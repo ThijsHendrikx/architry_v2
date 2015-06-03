@@ -1,0 +1,51 @@
+  
+<ion-view title="Projects" ng-init="init()">
+  	
+  	<ion-header-bar class="bar-subheader">
+	 	<form ng-submit="addProject(projectCode)" class="item-input">
+
+			  <label class="item-input-wrapper" >
+			    <input type="text" placeholder="add project" ng-model="projectCode">
+			  </label>
+			  
+			  <button type="submit" class="button button-clear">
+			    Add
+			  </button>
+
+
+		</form>
+	</ion-header-bar>
+
+
+
+
+ 	<ion-content class="background">
+
+	 	<ul class="list">
+		   
+		    <li ng-repeat="project in projects" class="projects card list">
+
+			  <div class="item">
+			    <h2>{{project.title}}</h2>
+			  </div>
+
+			  <div class="item item-image">
+			   	 <img ng-src="{{project.thumbnail}}">
+			  </div>
+
+			  <a class="item" href="#/projects/{{project.id}}">
+			    Details
+			  </a>
+
+			</li>
+
+		</ul>
+
+
+		
+
+
+  	</ion-content>
+
+
+</ion-view>
