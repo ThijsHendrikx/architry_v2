@@ -122,6 +122,33 @@ angular.module('starter.controllers', [])
 	$scope.addTestProject = function(){
 
 		$scope.addProject("testproject");
+
+		var testProject = {
+
+			id:99,
+			title:"Test project",
+			description:"Dit is een test project",
+			thumbnail:"../img/scene1_left.jpg",
+			views:[
+				{
+					viewId:97,
+					title:"Test1",
+					imgLeftUrl:"../img/scene1_left.jpg",
+					imgRightUrl:"../img/scene1_right.jpg",
+
+				},{
+					viewId:98,
+					title:"Test2",
+					imgLeftUrl:"../img/scene2_view1_left.jpg",
+					imgRightUrl:"../img/scene2_view1_right.jpg",
+
+				}
+
+			]
+
+		}
+
+		$scope.projects.push(testProject);
 	
 	}
 
