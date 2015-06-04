@@ -5,6 +5,23 @@ angular.module('starter.controllers', [])
 	//Parameters
 	$scope.projects = Projects.all();
 
+	$scope.notification = "";
+
+	$scope.notify = function(message){
+		$scope.notification =  message;
+
+		setTimeout(function () {
+	        $scope.$apply(function(){
+	            $scope.dismissNotification();
+	        });
+	    }, 3000);
+
+	}
+
+	$scope.dismissNotification = function(){
+		$scope.notification = "";
+	}
+
 
 	//Methods
 	$scope.addProject = function(projectCode){
@@ -28,13 +45,13 @@ angular.module('starter.controllers', [])
 					$scope.downloadMediaForProject(project);
 				
 				}else{
-					alert("project already exists");
+					$scope.notify(project.title + " is already added");
 					$ionicLoading.hide();
 				}
 
 		    
 		      }else{
-		        alert(data.message);
+		        $scope.notify(data.message);
 		        $ionicLoading.hide();
 		      }
 
@@ -42,7 +59,7 @@ angular.module('starter.controllers', [])
 		    })
 
 		    .error(function(data){
-		        alert( "failure message: " + JSON.stringify({data: data}));
+		        $scope.notify("Sorry, an error has accured :(");
 		        $ionicLoading.hide();
 		    });
 
@@ -107,8 +124,6 @@ angular.module('starter.controllers', [])
 		
 		$q.all(promises).then(function(res) {
 
-			alert(res);
-
 			for(var i = 0; i < res.length; i++){
 				console.log(res[i].fullPath);
 			}
@@ -128,45 +143,50 @@ angular.module('starter.controllers', [])
 
 	$scope.addTestProject = function(){
 
-		$scope.addProject("testproject");
+		if( ionic.Platform.isIOS() || ionic.Platform.isAndroid() ) {
+			$scope.addProject("testproject");
 
-		var testProject = {
+		}else{
 
-			id:99,
-			title:"Test project",
-			description:"Dit is een test project",
-			thumbnail:"../img/scene1_left.jpg",
-			views:[
-				{
-					viewId:97,
-					title:"Test1",
-					imgLeftUrl:"../img/scene1_left.jpg",
-					imgRightUrl:"../img/scene1_right.jpg",
+			var testProject = {
 
-				},{
-					viewId:98,
-					title:"Test2",
-					imgLeftUrl:"../img/scene2_view1_left.jpg",
-					imgRightUrl:"../img/scene2_view1_right.jpg",
+				id:99,
+				title:"Test project",
+				description:"Dit is een test project",
+				thumbnail:"../img/scene1_left.jpg",
+				views:[
+					{
+						viewId:97,
+						title:"Test1",
+						imgLeftUrl:"../img/scene1_left.jpg",
+						imgRightUrl:"../img/scene1_right.jpg",
 
-				}
+					},{
+						viewId:98,
+						title:"Test2",
+						imgLeftUrl:"../img/scene2_view1_left.jpg",
+						imgRightUrl:"../img/scene2_view1_right.jpg",
 
-			]
+					}
 
+				]
+
+			}
+
+			$scope.projects.push(testProject);
 		}
-
-		$scope.projects.push(testProject);
 	
 	}
 
 
-	$ionicPlatform.ready(function() {
+ 	$scope.$on('$ionicView.afterEnter', function(){
 
-  		if($scope.projects.length == 0){
+ 		$scope.projects = Projects.all();
+
+		if($scope.projects.length == 0){
   			$scope.addTestProject();
   		}
-
- 	});
+	});
 
 })
 
@@ -177,9 +197,17 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('ProjectDetailsCtrl', function($scope, $stateParams,Projects) {
+.controller('ProjectDetailsCtrl', function($scope, $stateParams,$ionicHistory,Projects) {
  
   $scope.project = Projects.get($stateParams.projectId);
+
+  $scope.Remove = function(project){
+
+  	Projects.remove(project);
+
+  	$ionicHistory.goBack();
+
+  }
 
 })
 
@@ -224,9 +252,9 @@ angular.module('starter.controllers', [])
 
  
     $scope.quit = function(event)  {
+	  
 	   $ionicHistory.goBack();
 	 
-	
 	}
 
 })

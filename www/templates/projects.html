@@ -16,14 +16,19 @@
 		</form>
 	</ion-header-bar>
 
+	<div class="bar bar-subheader bar-assertive notification ng-hide" ng-show="notification" ng-click="dismissNotification()">
+		<h1 class="title">{{notification}}</h1>
+	</div>
+
 
 
 
  	<ion-content class="background">
 
+
 	 	<ul class="list">
 		   
-		    <li ng-repeat="project in projects" class="projects card list" href="#/projects/{{project.id}}">
+		    <li ng-repeat="project in projects" class="projects card list">
 
 			  <div class="item">
 			    <h2>{{project.title}}</h2>
@@ -32,6 +37,10 @@
 			  <div class="item item-image">
 			   	 <img ng-src="{{project.thumbnail}}">
 			  </div>
+
+			    <a class="item item-icon-left" href="#/projects/{{project.id}}">
+				    Details
+				</a>
 
 
 
