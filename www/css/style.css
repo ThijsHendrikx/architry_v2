@@ -21,3 +21,14 @@ form{
 	left:0;
 	z-index:99;
 }
+
+.notification{
+	-webkit-transition: all linear 0.2s;
+  	transition: all linear 0.2s;
+}
+
+
+.notification.ng-hide {
+  margin-top:-50px;
+  
+}

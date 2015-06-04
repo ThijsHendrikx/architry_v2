@@ -9,7 +9,7 @@
 
       
       <div class="item item-image">
-      <img ng-src="{{project.thumbnail}}">
+        <img ng-src="{{project.thumbnail}}">
       </div>
       
       <p>
@@ -21,11 +21,19 @@
 
       <ion-list>
 
-      <a class="item item-thumbnail-left" ng-repeat="view in project.views" href="#/projects/details/{{view.viewId}}">
+        <li class="item item-thumbnail-left" ng-repeat="view in project.views">
 
-          <img src="{{view.imgLeftUrl}}"><h2>{{view.viewId}} {{view.title}} </h2></ion-item>
-          
-      </a>
+            <img src="{{view.imgLeftUrl}}"><h2>{{view.viewId}} {{view.title}} </h2>
+
+            <a href="#/projects/details/{{view.viewId}}">Details</a>
+            
+        </li>
+
+      </ion-list>
+      
+      <button class="button button-block button-assertive" ng-click="Remove({{project}})">
+        Remove project
+      </button>
 
 
   </ion-content>

@@ -4,6 +4,7 @@ angular.module('starter.services', [])
 
 	var projects = JSON.parse(window.localStorage['projects'] || '[]');
 
+
 	return {
 	    all: function() {
 	      return projects;
@@ -11,7 +12,14 @@ angular.module('starter.services', [])
 
 
 	    remove: function(project) {
-	      projects.splice(projects.indexOf(project), 1);
+
+        var aprojects = JSON.parse(window.localStorage['projects'] || '[]');
+
+	      aprojects.splice(aprojects.indexOf(project), 1);
+
+        window.localStorage["projects"] = JSON.stringify(aprojects);
+
+        projects = aprojects;
 	    },
 
 
@@ -52,11 +60,12 @@ angular.module('starter.services', [])
 
 
 	      //Delete the test project if exists
-	      // for(var i = 0; i < aprojects.length; i++){
-	      // 	if(parseInt(aprojects[i].id) == -1){
-	      // 		remove(aprojects[i]);
-	      // 	}
-	      // }
+	      for(var i = 0; i < aprojects.length; i++){
+	      	if(parseInt(aprojects[i].id) == -1){
+
+	      		//this.remove(aprojects[i]);
+	      	}
+	      }
 
 	      aprojects.reverse();
 	      aprojects.push( project );
@@ -68,7 +77,16 @@ angular.module('starter.services', [])
 	    }
 	};
 
-}).factory("Simulator",function(){
+})
+
+
+
+
+
+
+
+
+.factory("Simulator",function(){
 
 	var translationLeft = null;
   var translationRight = null;
