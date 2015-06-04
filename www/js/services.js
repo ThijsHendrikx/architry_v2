@@ -124,12 +124,12 @@ angular.module('starter.services', [])
       //Materials
       var materialRTTLeft = new THREE.MeshBasicMaterial({
         side: THREE.BackSide,
-        map: THREE.ImageUtils.loadTexture('img/scene2_view1_left.jpg')
+        map: THREE.ImageUtils.loadTexture(imgLeftUrl)
       });
 
       var materialRTTRight = new THREE.MeshBasicMaterial({
         side: THREE.BackSide,
-        map: THREE.ImageUtils.loadTexture('img/scene2_view1_right.jpg')
+        map: THREE.ImageUtils.loadTexture(imgRightUrl)
       });
 
      var materialLeft =  new THREE.MeshBasicMaterial({map:textureRTTLeft} );
