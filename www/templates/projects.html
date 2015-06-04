@@ -1,7 +1,7 @@
   
-<ion-view title="Projects" ng-init="init()">
+<ion-view title="<img src='./img/logo.png'>" ng-init="init()">
   	
-  	<ion-header-bar class="bar-subheader">
+<!--   	<ion-header-bar class="bar-subheader">
 	 	<form ng-submit="addProject(projectCode)" class="item-input">
 
 			  <label class="item-input-wrapper" >
@@ -14,30 +14,37 @@
 
 
 		</form>
-	</ion-header-bar>
+	</ion-header-bar> -->
 
 
+<div class="bar bar-subheader1">
+   <hr>
+      <h2 >view</h2>
+
+      <h4 class="add">Add project:</h4>
+        <label class="item1 addproject item-energized item-input">
+          <input type="text" class="submitCode" ng-model="projectCode" placeholder="Submit project code">	  <button type="submit" class="button  button-energized">
+			    Add
+			  </button>
+        </label>
 
 
- 	<ion-content class="background">
+        </div>
+  <ion-content class="has-subheader1">
 
-	 	<ul class="list">
-		   
-		    <li ng-repeat="project in projects" class="projects card list" href="#/projects/{{project.id}}">
 
-			  <div class="item">
-			    <h2>{{project.title}}</h2>
-			  </div>
+	   <ion-list>
+	           <ion-item ng-repeat="project in projects" class="projects" href="#/projects/{{project.id}}">
 
-			  <div class="item item-image">
+			    <h3>{{project.title}}</h3>
+
 			   	 <img ng-src="{{project.thumbnail}}">
-			  </div>
 
+       			<div  class="descriptionProject item-body "><h4>About the project</h4><p>{{project.description}}</p></div>
 
+			</ion-item>
 
-			</li>
-
-		</ul>
+	</ion-list>
 
 
 		
