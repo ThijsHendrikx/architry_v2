@@ -76,8 +76,9 @@ angular.module('starter.controllers', [])
 
 
 
-	 	project.thumbnail = cordova.file.documentsDirectory + "project" + project.id + "_thumbnail.jpg";
+	 	project.thumbnail = cordova.file.dataDirectory + "project" + project.id + "_thumbnail.jpg";
 	 	targetUrls.push(project.thumbnail);
+
 
 
 
@@ -85,13 +86,15 @@ angular.module('starter.controllers', [])
 	 		urls.push(project.views[i].imgLeftUrl);
 	 		urls.push(project.views[i].imgRightUrl);
 
-	 		project.views[i].imgLeftUrl = cordova.file.documentsDirectory + "project" + project.id + "_view" + project.views[i].viewId + "_left.png";
-	 		project.views[i].imgRightUrl = cordova.file.documentsDirectory + "project" + project.id + "_view" + project.views[i].viewId + "_right.png";
+	 		project.views[i].imgLeftUrl = cordova.file.dataDirectory + "project" + project.id + "_view" + project.views[i].viewId + "_left.png";
+	 		project.views[i].imgRightUrl = cordova.file.dataDirectory + "project" + project.id + "_view" + project.views[i].viewId + "_right.png";
 	 		
 	 		targetUrls.push(project.views[i].imgLeftUrl);
 	 		targetUrls.push(project.views[i].imgRightUrl);
 
+
 	 	}
+
 
 	 	var promises = [];
 
@@ -104,6 +107,8 @@ angular.module('starter.controllers', [])
 		
 		$q.all(promises).then(function(res) {
 
+			alert(res);
+
 			for(var i = 0; i < res.length; i++){
 				console.log(res[i].fullPath);
 			}
@@ -114,6 +119,8 @@ angular.module('starter.controllers', [])
 
 			$ionicLoading.hide();
 		});
+
+	
 
 	}
 

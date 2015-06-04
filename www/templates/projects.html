@@ -23,7 +23,7 @@
 
 	 	<ul class="list">
 		   
-		    <li ng-repeat="project in projects" class="projects card list">
+		    <li ng-repeat="project in projects" class="projects card list" href="#/projects/{{project.id}}">
 
 			  <div class="item">
 			    <h2>{{project.title}}</h2>
@@ -33,9 +33,7 @@
 			   	 <img ng-src="{{project.thumbnail}}">
 			  </div>
 
-			  <a class="item" href="#/projects/{{project.id}}">
-			    Details
-			  </a>
+
 
 			</li>
 
