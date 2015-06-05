@@ -1,40 +1,30 @@
   
 <ion-view title="<img src='./img/logo.png'>" ng-init="init()">
   	
-<!--   	<ion-header-bar class="bar-subheader">
-	 	<form ng-submit="addProject(projectCode)" class="item-input">
 
-			  <label class="item-input-wrapper" >
-			    <input type="text" placeholder="add project" ng-model="projectCode">
-			  </label>
-			  
-			  <button type="submit" class="button button-clear">
-			    Add
-			  </button>
+	<div class="bar bar-subheader1">
+	   <hr>
+	      <h2 >view</h2>
 
+	      <h4 class="add">Add project:</h4>
 
-		</form>
-	</ion-header-bar> -->
+      	<form ng-submit="addProject(projectCode)">
+	        <label class="item1 addproject item-energized item-input">
+	          <input type="text" class="submitCode" ng-model="projectCode" placeholder="Submit project code"><button type="submit" class="button  button-energized">
+				    Add
+				  </button>
+	        </label>
+        </form>
+	</div>
 
-	<div class="bar bar-subheader bar-assertive notification ng-hide" ng-show="notification" ng-click="dismissNotification()">
+	<div class="bar bar-subheader1 bar-assertive notification ng-hide" ng-show="notification" ng-click="dismissNotification()">
 		<h1 class="title">{{notification}}</h1>
 	</div>
 
 
-<div class="bar bar-subheader1">
-   <hr>
-      <h2 >view</h2>
 
-      <h4 class="add">Add project:</h4>
-        <label class="item1 addproject item-energized item-input">
-          <input type="text" class="submitCode" ng-model="projectCode" placeholder="Submit project code">	  <button type="submit" class="button  button-energized">
-			    Add
-			  </button>
-        </label>
-
-
-
-   <ion-list>
+	<ion-content class="has-subheader">
+  		<ion-list>
 	           <ion-item ng-repeat="project in projects" class="projects" href="#/projects/{{project.id}}">
 
 			    <h3>{{project.title}}</h3>
@@ -49,7 +39,7 @@
 
 			</ion-item>
 
-	</ion-list>
+		</ion-list>
 
 
 		
