@@ -20,23 +20,27 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // $stable:                          #869898 !default;
 $positive:                        #FFF !default;
 
+@font-face {    font-family: "Lovelo";
+    src:  url('../lib/ionic/fonts/Lovelo_Black.ttf') format('truetype');
+   }
+
+@font-face {    font-family: "Lovelo_Line";
+    src:  url('../lib/ionic/fonts/LoveloLineLight.ttf') format('truetype');
+   }
+
+
 canvas{
     width:100%;
     height:100%;
 
 }
 
-@font-face {    font-family: "Lovelo";
-    src:  url('./fonts/Lovelo_Black.ttf') format('truetype');
-   }
-
-@font-face {    font-family: "Lovelo_Line";
-    src:  url('./fonts/Lovelo_Black.ttf') format('truetype');
-   }
 
 img{
   max-width: 100%;
 }
+
+
 
 h1, h3, h5 {
   font-family: "Lovelo" !important;
@@ -54,22 +58,25 @@ h2{
    }
 
 h3{
+
   font-size: 17px !important;
-  color:#25272C !important;
+  color:#44474A !important;
   padding-left:2% !important;
 }
 
 h4{
-font-size:14px !important;
-margin-bottom:3px !important;
-color:#25272C !important;
-margin-top:0 !important;
-   font-weight: 600 !important;
+  font-size: 18px;
+  font-family: "lovelo" !important;
+  color: white !important;
+  letter-spacing: 2px;
 }
 
+h5{
+  color:#FFFFFF !important;
+}
 p{
       letter-spacing: 2.5px !important;
-      font-weight: 200 !important;
+      font-weight: 400 !important;
       font-size: 14px !important;
       }
 p.ng-binding {
@@ -175,7 +182,7 @@ h4.add{
 }
 
 .descriptionProject {
-  /* background-color: #869898 !important; */
+  // background-color: #869898 !important;
   margin-top: 3px;
   padding-left: 2% !important;
 }
@@ -184,7 +191,7 @@ h4.add{
   color: rgb(20, 20, 16) !important;
   font-size: 12px !important;
   line-height: 1.2 !important;
-  letter-spacing: 3px !important;
+  letter-spacing: 2px !important;
   /* overflow: visible!important; */
 }
 
