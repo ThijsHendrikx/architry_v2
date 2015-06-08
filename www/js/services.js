@@ -15,12 +15,23 @@ angular.module('starter.services', [])
 
         var aprojects = JSON.parse(window.localStorage['projects'] || '[]');
 
-	      aprojects.splice(aprojects.indexOf(project), 1);
+	      aprojects.splice(   this.indexOfProject(aprojects,project) , 1);
 
         window.localStorage["projects"] = JSON.stringify(aprojects);
 
         projects = aprojects;
+
 	    },
+
+
+      indexOfProject: function(projects,project){
+         for(var i = 0; i < projects.length; i++) {
+              if (projects[i].id === project.id) return i;
+          }
+
+          return -1;
+      },
+
 
 
 	    get: function(projectId) {
@@ -58,12 +69,10 @@ angular.module('starter.services', [])
 
 	      var aprojects = JSON.parse(window.localStorage['projects'] || '[]');
 
-
 	      //Delete the test project if exists
 	      for(var i = 0; i < aprojects.length; i++){
 	      	if(parseInt(aprojects[i].id) == -1){
-
-	      		//this.remove(aprojects[i]);
+	      		this.remove(aprojects[i]);
 	      	}
 	      }
 

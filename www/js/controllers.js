@@ -148,7 +148,7 @@ angular.module('starter.controllers', [])
 
 		}else{
 
-			var testProject = {
+			var testProject1 = {
 
 				id:99,
 				title:"Test project",
@@ -173,7 +173,18 @@ angular.module('starter.controllers', [])
 
 			}
 
-			$scope.projects.push(testProject);
+			var testProject2 = {
+
+				id:98,
+				title:"Test project 2",
+				description:"Dit is een test project",
+				thumbnail:"../img/scene1_left.jpg",
+				views:[]
+
+			}
+
+			Projects.add(testProject1);
+			Projects.add(testProject2);
 		}
 	
 	}

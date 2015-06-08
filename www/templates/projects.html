@@ -4,7 +4,7 @@
 
 	<div class="bar bar-subheader1">
 	   <hr>
-	      <h2 >view</h2>
+	      <h2>view</h2>
 
 	      <h4 class="add">Add project:</h4>
 
@@ -23,14 +23,16 @@
 
 
 
-	<ion-content class="has-subheader">
+	<ion-content class="has-subheader1">
   		<ion-list>
-	           <ion-item ng-repeat="project in projects" class="projects" href="#/projects/{{project.id}}">
+	        
+	        <ion-item ng-repeat="project in projects" class="projects" href="#/projects/{{project.id}}">
 
 			    <h3>{{project.title}}</h3>
 
-			   	 <img ng-src="{{project.thumbnail}}">
-			    <a class="item item-icon-left" href="#/projects/{{project.id}}">
+			   	<img ng-src="{{project.thumbnail}}">
+			    
+			    <a href="#/projects/{{project.id}}">
 				    Details
 				</a>
 
