@@ -9,25 +9,39 @@
 
       
       <div class="item item-image">
-        <img ng-src="{{project.thumbnail}}">
+     
+    <img src="./img/projectplattegrond.jpg" alt="">
       </div>
       
-      <p>
+ <!--      <p>
         {{project.description}}
       </p>
-
-
-
+ -->
 
       <ion-list>
 
+      <ion-item class="itemView" ng-repeat="view in project.views" href="#/projects/details/{{view.viewId}}">
+
+        <img class="thumbnail" ng-src="{{view.imgLeftUrl}}" >
+        <div class="rightDescription  item-body"><h4>{{view.title}}</h4><!-- <div class="description" ><P>Hier kun je de tuin in VR zien.</P></div> --> <button class="viewButton button-outline button-positive">
+view in VR!
+</button>
+</div>
+
+
+        </ion-item>
+
+
+<!-- 
         <li class="item item-thumbnail-left" ng-repeat="view in project.views">
 
             <img src="{{view.imgLeftUrl}}"><h2>{{view.viewId}} {{view.title}} </h2>
 
-            <a href="#/projects/details/{{view.viewId}}">Details</a>
-            
-        </li>
+                      <div class="rightDescription  item-body"><h4>{{view.title}}</h4> <button class="viewButton button-outline button-positive">
+view in VR!
+</button>
+</div>
+        </li> -->
 
       </ion-list>
       

@@ -28,8 +28,11 @@ canvas{
 
 @font-face {    font-family: "Lovelo";
     src:  url('./fonts/Lovelo_Black.ttf') format('truetype');
-   
-}
+   }
+
+@font-face {    font-family: "Lovelo_Line";
+    src:  url('./fonts/Lovelo_Black.ttf') format('truetype');
+   }
 
 img{
   max-width: 100%;
@@ -118,7 +121,7 @@ ion-nav-bar .title img{
 
 .bar-subheader{
     background-color: #869898 !important;
-    top:200px !important;
+    top:42px !important;
 }
 .bar-subheader1 {
   top: 40px !important;
@@ -185,8 +188,13 @@ h4.add{
   /* overflow: visible!important; */
 }
 
+.bar {
+  border:none !important;
+}
 
-
+.item{
+  border:none !important;
+}
 .projectphoto img{
     max-width: 100%;
 }
@@ -242,6 +250,7 @@ img.thumbnail {
   margin: 0 30%;
   width: 68%;
   padding-top: 0px !important;
+  padding-bottom: 0 !important;
 
 p {
     margin: 0;
