@@ -108,12 +108,10 @@ angular.module('starter.services', [])
 
   var translationWidth = 0;
 
-  var imgLeftUrl = "";
-  var imgRightUrl = "";
-
+ 
   return{
 
-    start:function(){
+    start:function(imgLeftUrl,imgRightUrl){
 
       //Scenes
       var sceneRTTLeft = new THREE.Scene();
@@ -145,7 +143,6 @@ angular.module('starter.services', [])
       //Textures
       var textureRTTLeft = new THREE.WebGLRenderTarget( window.innerWidth, window.innerHeight, { minFilter: THREE.LinearFilter, magFilter: THREE.NearestFilter, format: THREE.RGBFormat } );
       var textureRTTRight = new THREE.WebGLRenderTarget( window.innerWidth, window.innerHeight, { minFilter: THREE.LinearFilter, magFilter: THREE.NearestFilter, format: THREE.RGBFormat } );
-
 
 
       //Materials

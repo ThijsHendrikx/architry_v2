@@ -26,7 +26,9 @@ angular.module('starter.controllers', [])
 
 	$scope.checkFile = function(path){
 
-		$cordovaFile.checkFile(cordova.file.dataDirectory, path.replace(/^.*[\\\/]/, '') )
+
+
+		$cordovaFile.checkFile(cordova.file.dataDirectory, path.replace(/^.*[\\\/]/, ''))
 	      .then(function (success) {
 	      	alert("found: " + path)
 	        
@@ -97,56 +99,62 @@ angular.module('starter.controllers', [])
 	//Downloads the image and or video files from an project
 	$scope.downloadMediaForProject = function(project){
 
-		var urls = [];
-	    var trustHosts = true
-	    var options = {};
-	    var targetUrls = [];
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, null);
 
-	 	urls.push(project.thumbnail);
+		function onSuccess(fileSystem){
 
+			var urls = [];
+		    var trustHosts = true
+		    var options = {};
+		    var targetUrls = [];
 
-
-	 	project.thumbnail = cordova.file.dataDirectory + "project" + project.id + "_thumbnail.jpg";
-	 	targetUrls.push(project.thumbnail);
-
+		 	urls.push(project.thumbnail);
 
 
 
-	 	for(var i = 0; i < project.views.length; i++){
-	 		urls.push(project.views[i].imgLeftUrl);
-	 		urls.push(project.views[i].imgRightUrl);
-
-	 		project.views[i].imgLeftUrl = cordova.file.dataDirectory + "project" + project.id + "_view" + project.views[i].viewId + "_left.png";
-	 		project.views[i].imgRightUrl = cordova.file.dataDirectory + "project" + project.id + "_view" + project.views[i].viewId + "_right.png";
-	 		
-	 		targetUrls.push(project.views[i].imgLeftUrl);
-	 		targetUrls.push(project.views[i].imgRightUrl);
+		 	project.thumbnail = fileSystem.root.toURL() + "project" + project.id + "_thumbnail.jpg";
+		 	targetUrls.push(project.thumbnail);
 
 
-	 	}
 
 
-	 	var promises = [];
+		 	for(var i = 0; i < project.views.length; i++){
+		 		urls.push(project.views[i].imgLeftUrl);
+		 		urls.push(project.views[i].imgRightUrl);
 
-		for(var i = 0; i < urls.length; i++){
+		 		project.views[i].imgLeftUrl = fileSystem.root.toURL() + "project" + project.id + "_view" + project.views[i].viewId + "_left.jpg";
+		 		project.views[i].imgRightUrl = fileSystem.root.toURL() + "project" + project.id + "_view" + project.views[i].viewId + "_right.jpg";
+		 		
+		 		targetUrls.push(project.views[i].imgLeftUrl);
+		 		targetUrls.push(project.views[i].imgRightUrl);
+
+
+		 	}
+
+
+		 	var promises = [];
+
+			for(var i = 0; i < urls.length; i++){
+				
+				promises.push($cordovaFileTransfer.download(urls[i],targetUrls[i], options, trustHosts));
 			
-			promises.push($cordovaFileTransfer.download(urls[i],targetUrls[i], options, trustHosts));
-		
-		}
-		 
-		
-		$q.all(promises).then(function(res) {
-
-			for(var i = 0; i < res.length; i++){
-				console.log(res[i].fullPath);
 			}
+			 
+			
+			$q.all(promises).then(function(res) {
 
-			Projects.add(project);
- 
-			$scope.projects = Projects.all();
+				for(var i = 0; i < res.length; i++){
+					console.log(res[i].fullPath);
+				}
 
-			$ionicLoading.hide();
-		});
+				Projects.add(project);
+	 
+				$scope.projects = Projects.all();
+
+				$ionicLoading.hide();
+			});
+
+		}
 
 	
 
@@ -207,10 +215,6 @@ angular.module('starter.controllers', [])
 
  		$scope.projects = Projects.all();
 
- 		for(var i = 0; i < $scope.projects.length; i++){
- 			$scope.checkFile($scope.projects[i].thumbnail);
- 		}
-
 		if($scope.projects.length == 0){
   			$scope.addTestProject();
   		}
@@ -245,10 +249,8 @@ angular.module('starter.controllers', [])
 
 .controller('VRViewerCtrl', function($scope, $stateParams,$ionicHistory,$cordovaFile,$ionicLoading,Simulator,Projects) {
 
-	Simulator.imgLeftUrl = Projects.getView($stateParams.viewId).imgLeftUrl;
-	Simulator.imgRightUrl = Projects.getView($stateParams.viewId).imgRightUrl;
-
-	alert( Simulator.imgRightUrl );
+	$scope.imgLeftUrl = Projects.getView($stateParams.viewId).imgLeftUrl;
+	$scope.imgRightUrl = Projects.getView($stateParams.viewId).imgRightUrl;
 
 	$scope.$on('$ionicView.loaded', function (viewInfo, state) {
 
@@ -259,7 +261,7 @@ angular.module('starter.controllers', [])
         if ('orientation' in screen) {
 		   screen.lockOrientation('landscape');
 
-		   setTimeout(function(){ Simulator.start(); $ionicLoading.hide(); },500);
+		   setTimeout(function(){ Simulator.start($scope.imgLeftUrl,$scope.imgRightUrl); $ionicLoading.hide(); },500);
 		}
 
 		window.plugins.insomnia.keepAwake()
