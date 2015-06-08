@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('ProjectsCtrl',function($scope,$http,$ionicLoading,$ionicPlatform,$q,$cordovaFileTransfer,Projects){
+.controller('ProjectsCtrl',function($scope,$http,$ionicLoading,$ionicPlatform,$q,$cordovaFileTransfer,$cordovaFile,Projects){
 
 	//Parameters
 	$scope.projects = Projects.all();
@@ -20,6 +20,19 @@ angular.module('starter.controllers', [])
 
 	$scope.dismissNotification = function(){
 		$scope.notification = "";
+	}
+
+
+
+	$scope.checkFile = function(path){
+
+		$cordovaFile.checkFile(cordova.file.dataDirectory, path.replace(/^.*[\\\/]/, '') )
+	      .then(function (success) {
+	      	alert("found: " + path)
+	        
+	      }, function (error) {
+	        alert("test");
+	      });
 	}
 
 
@@ -193,6 +206,10 @@ angular.module('starter.controllers', [])
  	$scope.$on('$ionicView.afterEnter', function(){
 
  		$scope.projects = Projects.all();
+
+ 		for(var i = 0; i < $scope.projects.length; i++){
+ 			$scope.checkFile($scope.projects[i].thumbnail);
+ 		}
 
 		if($scope.projects.length == 0){
   			$scope.addTestProject();
