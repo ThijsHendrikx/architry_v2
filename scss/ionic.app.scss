@@ -62,10 +62,11 @@ h3{
   font-size: 17px !important;
   color:#44474A !important;
   padding-left:2% !important;
+  padding-top: 5px !important
 }
 
 h4{
-  font-size: 18px;
+  font-size: 13px !important;
   font-family: "lovelo" !important;
   color: white !important;
   letter-spacing: 2px;
@@ -76,16 +77,17 @@ h5{
 }
 p{
       letter-spacing: 2.5px !important;
-      font-weight: 400 !important;
+      font-weight: 200 !important;
       font-size: 14px !important;
+
       }
 p.ng-binding {
   margin-top: 0 !important;
 }
 hr{
-    margin-top: -2px;
+    margin-bottom: 1px;
     width: 20%;
-
+    margin-top: 0px;
 }
 
 .logo {
@@ -104,8 +106,20 @@ hr{
     height:100%;
 }
 
+
 .headers{
     background-color: #ec008c;
+}
+
+.bar-header {
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none;
+    border-bottom: none;
+}
+
+.iv { 
+  color: #869898;
 }
 
 ion-nav-bar .bar-stable .bar-header{
@@ -115,15 +129,18 @@ ion-nav-bar .bar-stable .bar-header{
 ion-nav-bar .title {
     text-align: center !important;
  font-family: "Lovelo" !important;
-    font-size: 28px !important;
+    font-size: 24px !important;
     letter-spacing: 3px !important;
     color: white;
     border:none;
+     padding-top:8px !important;
+     padding-bottom:2px;
 
 }
 
 ion-nav-bar .title img{
-  width: 60%;
+  width: 50%;
+
 }
 
 .bar-subheader{
@@ -141,12 +158,9 @@ ion-nav-bar .title img{
   top: 155px !important;
 }
 
-// .item-content p {
-//     overflow: none !important;
-//  }
 
 .addproject{
-  width: 94% !important;
+  width: 98% !important;
   border: 1px solid white;
   margin: 0px 5% 7px 1% !important;
 }
@@ -165,6 +179,12 @@ h4.add{
   padding:0 
 }
 
+.item-body h4{
+   margin-top: 0px !important;
+  margin-bottom: 1px !important;
+}
+
+
 .projectphoto{
     width: 100% !important;
     margin:3px auto;
@@ -178,25 +198,64 @@ h4.add{
 
 .item-content {
   width: 100% !important;
-  padding: 10px 1% !important;
+  margin-top: 10px !important;
+  padding-top:4px !important;
+  padding-bottom: 4px !important;
+  padding-left:0px !important;
+  padding-right:0px !important;
 }
 
-.descriptionProject {
-  // background-color: #869898 !important;
-  margin-top: 3px;
-  padding-left: 2% !important;
+.item .item-content.activated {
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  /* border-color: #869898; */
+  background-color: #AFA278 !important;
+
+  .descriptionProject {
+    background-color: #AFA278 !important;
+      -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  }
+}
+
+.item-complex .item-content, .item-radio .item-content {
+padding: 0 !important;
+  padding-top: 8px !important;
 }
 
 .descriptionProject p {
-  color: rgb(20, 20, 16) !important;
+  color: white !important;
   font-size: 12px !important;
   line-height: 1.2 !important;
   letter-spacing: 2px !important;
   /* overflow: visible!important; */
+  width: 100%;
+  float: left;
 }
 
+.descriptionProject{
+ background-color: #869898 !important;
+width:100%;
+}
+.ion-chevron-right{
+    color: white;
+  font-size: 20px;
+
+}
+
+.eyeicon {
+  width: 16%;
+  margin: 0px 80%;
+  position: absolute;
+  opacity: 0.8;
+}
 .bar {
   border:none !important;
+   background-size: 100% 0px !important;
 }
 
 .item{
@@ -207,14 +266,16 @@ h4.add{
 }
 
 .submitCode::-webkit-input-placeholder{
-  color:    white;
+
   font-weight: 200;
-  color:white !important;
+  color:   rgba(255, 255, 255, 0.4) !important;
 font-size:12px !important;
 line-height:1.2 !important;
 letter-spacing:2px !important;
 }
-
+input[type="text"]{
+  color:#44474a !important;
+}
 
 
 // Include all of Ionic
@@ -228,7 +289,8 @@ letter-spacing:2px !important;
   color: #FFFFFF !important;
   letter-spacing: 2px;
   font-weight: 200;
-  margin-top: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   border-bottom: 1!important;
 }
 
@@ -251,6 +313,8 @@ img.thumbnail {
   width: 30%;
   float: left;
   margin-left: 2%;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .rightDescription {
@@ -259,8 +323,8 @@ img.thumbnail {
   padding-top: 0px !important;
   padding-bottom: 0 !important;
 
-p {
-    margin: 0;
+h4 {
+    margin-top:3px !important;
     color: white;
   }
 }
@@ -277,7 +341,6 @@ p {
 
 .itemView > .item-content{
    background-color: #44474a !important;
-   margin-bottom: 5px;
 }
 
 .test{

@@ -178,13 +178,13 @@ angular.module('starter.controllers', [])
 				views:[
 					{
 						viewId:97,
-						title:"Test1",
+						title:"1. keuken",
 						imgLeftUrl:"../img/scene1_left.jpg",
 						imgRightUrl:"../img/scene1_right.jpg",
 
 					},{
 						viewId:98,
-						title:"Test2",
+						title:"2. buitenview",
 						imgLeftUrl:"../img/scene2_view1_left.jpg",
 						imgRightUrl:"../img/scene2_view1_right.jpg",
 

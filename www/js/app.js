@@ -18,8 +18,12 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','ngC
   });
 })
 
+
+
 .config(function($stateProvider, $urlRouterProvider) {
   
+// $ionicConfigProvider.backButton.text('').icon('ion-chevron-left');
+
   $stateProvider
 
   .state('projects', {
@@ -45,9 +49,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','ngC
   $urlRouterProvider.otherwise('projects');
 
 
-
 });
-
 
 
 

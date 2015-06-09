@@ -36,10 +36,11 @@ h2 {
 h3 {
   font-size: 17px !important;
   color: #44474A !important;
-  padding-left: 2% !important; }
+  padding-left: 2% !important;
+  padding-top: 5px !important; }
 
 h4 {
-  font-size: 18px;
+  font-size: 13px !important;
   font-family: "lovelo" !important;
   color: white !important;
   letter-spacing: 2px; }
@@ -49,15 +50,16 @@ h5 {
 
 p {
   letter-spacing: 2.5px !important;
-  font-weight: 400 !important;
+  font-weight: 200 !important;
   font-size: 14px !important; }
 
 p.ng-binding {
   margin-top: 0 !important; }
 
 hr {
-  margin-top: -2px;
-  width: 20%; }
+  margin-bottom: 1px;
+  width: 20%;
+  margin-top: 0px; }
 
 .logo {
   width: 50%; }
@@ -73,19 +75,30 @@ hr {
 .headers {
   background-color: #ec008c; }
 
+.bar-header {
+  border: 0px !important;
+  border-bottom-color: transparent !important;
+  background-image: none;
+  border-bottom: none; }
+
+.iv {
+  color: #869898; }
+
 ion-nav-bar .bar-stable .bar-header {
   background-color: #869898 !important; }
 
 ion-nav-bar .title {
   text-align: center !important;
   font-family: "Lovelo" !important;
-  font-size: 28px !important;
+  font-size: 24px !important;
   letter-spacing: 3px !important;
   color: white;
-  border: none; }
+  border: none;
+  padding-top: 8px !important;
+  padding-bottom: 2px; }
 
 ion-nav-bar .title img {
-  width: 60%; }
+  width: 50%; }
 
 .bar-subheader {
   background-color: #869898 !important;
@@ -101,7 +114,7 @@ ion-nav-bar .title img {
   top: 155px !important; }
 
 .addproject {
-  width: 94% !important;
+  width: 98% !important;
   border: 1px solid white;
   margin: 0px 5% 7px 1% !important; }
 
@@ -116,6 +129,10 @@ h4.add {
 .item-body {
   padding: 0; }
 
+.item-body h4 {
+  margin-top: 0px !important;
+  margin-bottom: 1px !important; }
+
 .projectphoto {
   width: 100% !important;
   margin: 3px auto; }
@@ -127,21 +144,52 @@ h4.add {
 
 .item-content {
   width: 100% !important;
-  padding: 10px 1% !important; }
+  margin-top: 10px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
 
-.descriptionProject {
-  margin-top: 3px;
-  padding-left: 2% !important; }
+.item .item-content.activated {
+  -o-transition: .2s;
+  -ms-transition: .2s;
+  -moz-transition: .2s;
+  -webkit-transition: .2s;
+  /* border-color: #869898; */
+  background-color: #AFA278 !important; }
+  .item .item-content.activated .descriptionProject {
+    background-color: #AFA278 !important; }
+
+.item-complex .item-content, .item-radio .item-content {
+  padding: 0 !important;
+  padding-top: 8px !important; }
 
 .descriptionProject p {
-  color: #141410 !important;
+  color: white !important;
   font-size: 12px !important;
   line-height: 1.2 !important;
   letter-spacing: 2px !important;
-  /* overflow: visible!important; */ }
+  /* overflow: visible!important; */
+  width: 100%;
+  float: left; }
+
+.descriptionProject {
+  background-color: #869898 !important;
+  width: 100%; }
+
+.ion-chevron-right {
+  color: white;
+  font-size: 20px; }
+
+.eyeicon {
+  width: 16%;
+  margin: 0px 80%;
+  position: absolute;
+  opacity: 0.8; }
 
 .bar {
-  border: none !important; }
+  border: none !important;
+  background-size: 100% 0px !important; }
 
 .item {
   border: none !important; }
@@ -150,12 +198,14 @@ h4.add {
   max-width: 100%; }
 
 .submitCode::-webkit-input-placeholder {
-  color: white;
   font-weight: 200;
-  color: white !important;
+  color: rgba(255, 255, 255, 0.4) !important;
   font-size: 12px !important;
   line-height: 1.2 !important;
   letter-spacing: 2px !important; }
+
+input[type="text"] {
+  color: #44474a !important; }
 
 /*!
   Ionicons, v2.0.1
@@ -7824,7 +7874,8 @@ a.button {
   color: #FFFFFF !important;
   letter-spacing: 2px;
   font-weight: 200;
-  margin-top: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   border-bottom: 1 !important; }
 
 .viewBT .button-outline {
@@ -7842,15 +7893,17 @@ a.button {
 img.thumbnail {
   width: 30%;
   float: left;
-  margin-left: 2%; }
+  margin-left: 2%;
+  margin-bottom: 5px;
+  margin-top: 5px; }
 
 .rightDescription {
   margin: 0 30%;
   width: 68%;
   padding-top: 0px !important;
   padding-bottom: 0 !important; }
-  .rightDescription p {
-    margin: 0;
+  .rightDescription h4 {
+    margin-top: 3px !important;
     color: white; }
 
 .topheader {
@@ -7861,8 +7914,7 @@ img.thumbnail {
   float: left; }
 
 .itemView > .item-content {
-  background-color: #44474a !important;
-  margin-bottom: 5px; }
+  background-color: #44474a !important; }
 
 .test {
   border: solid 1px #44474a;
