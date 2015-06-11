@@ -41,6 +41,8 @@ angular.module('starter.controllers', [])
 	//Methods
 	$scope.addProject = function(projectCode){
 
+		cordova.plugins.Keyboard.close();
+
 		$ionicLoading.show({
 	      template: 'Fetching project...'
 	    });
@@ -287,6 +289,20 @@ angular.module('starter.controllers', [])
 	 
 	}
 
+	$scope.tap = function(event){
+
+		icon = document.querySelector(".double-tap-icon")
+
+
+		icon.className = icon.className + " double-tap-icon-animate";
+
+
+		setTimeout(
+			function(){
+				icon.className = "double-tap-icon";
+			},500);
+	}
+
 })
 
 
@@ -303,7 +319,10 @@ angular.module('starter.controllers', [])
 
     link : function(scope, elem, attrs) {
 
-        $ionicGesture.on('doubletap', scope.quit, elem);
+        var gestureType = attrs.gestureType;
+      	$ionicGesture.on('doubletap', scope.quit, elem);
+      	$ionicGesture.on('tap', scope.tap, elem);
+      	$ionicGesture.on('swipe', scope.quit, elem);
 
     }
   }
