@@ -131,6 +131,9 @@ ion-nav-bar .title img {
   height: 115px !important;
   background-color: #869898 !important; }
 
+.platform-ois .bar-subheader1 {
+  top: 48px !important; }
+
 .has-subheader1 {
   top: 155px !important; }
 
@@ -7966,36 +7969,3 @@ img.thumbnail {
 
 .notification.ng-hide {
   margin-top: -50px; }
-
-/*Double tap icon animation*/
-.double-tap-icon {
-  width: 5em;
-  height: 5em;
-  margin: 20% auto;
-  border: 4px solid #000;
-  border-radius: 2.5em;
-  opacity: 0; }
-
-.double-tap-icon-animate {
-  -webkit-animation: doubletap .5s; }
-
-@-webkit-keyframes doubletap {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(0, 0); }
-
-  25% {
-    opacity: .7;
-    -webkit-transform: scale(1, 1); }
-
-  50% {
-    opacity: .7;
-    -webkit-transform: scale(0, 0); }
-
-  75% {
-    opacity: .7;
-    -webkit-transform: scale(1, 1); }
-
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(0, 0); } }
