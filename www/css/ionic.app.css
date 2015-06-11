@@ -131,7 +131,7 @@ ion-nav-bar .title img {
   height: 115px !important;
   background-color: #869898 !important; }
 
-.platform-ois .bar-subheader1 {
+.platform-ios .bar-subheader1 {
   top: 48px !important; }
 
 .has-subheader1 {
@@ -228,7 +228,7 @@ h4.add {
 
 .submitCode::-webkit-input-placeholder {
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.4) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 12px !important;
   line-height: 1.2 !important;
   letter-spacing: 2px !important; }
