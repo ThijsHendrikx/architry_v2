@@ -131,6 +131,9 @@ ion-nav-bar .title img {
   height: 115px !important;
   background-color: #869898 !important; }
 
+.platform-ois .bar-subheader1 {
+  top: 48px !important; }
+
 .has-subheader1 {
   top: 155px !important; }
 
