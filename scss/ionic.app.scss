@@ -184,10 +184,12 @@ ion-nav-bar .title img{
 
 .platform-ios{
    .bar-subheader1{
-  top: 48px !important;
+  top: 50px !important;
+}
+  .bar-subheader{
+     top:52px !important;
 }
 }
-
 .has-subheader1 {
   top: 155px !important;
 }
