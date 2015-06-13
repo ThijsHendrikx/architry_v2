@@ -230,7 +230,9 @@ h4.add{
 .projects {
   width: 95% !important;
   /* border: none !important; */
-  margin: 0 auto !important;
+  margin: -5px auto 0 auto!important;
+   
+
 }
 
 .item-content {
@@ -248,35 +250,40 @@ h4.add{
   -moz-transition:.2s;
   -webkit-transition:.2s;
   /* border-color: #869898; */
-  background-color: #AFA278 !important;
-
+ background-color: #44474a !important;
   .descriptionProject {
-    background-color: #AFA278 !important;
-      -o-transition:.2s;
+ background-color: #44474a !important;      -o-transition:.2s;
   -ms-transition:.2s;
   -moz-transition:.2s;
   -webkit-transition:.2s;
+  }
+  h3{
+    color:  white !important;
   }
 }
 
 .item-complex .item-content, .item-radio .item-content {
 padding: 0 !important;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+  // padding-top: 8px !important;
+  // padding-bottom: 8px !important;
 }
 
 .descriptionProject p {
   color: white !important;
-  font-size: 12px !important;
+  font-size: 14px !important;
   line-height: 1.2 !important;
   letter-spacing: 2px !important;
   /* overflow: visible!important; */
   width: 100%;
   float: left;
 }
+.button-outline.button-outline.active, .button-outline.button-outline.activated {
+  background-color: #2F3134!important;
+
+}
 
 .descriptionProject{
- background-color: #869898 !important;
+ background-color: #44474a !important;
 width:100%;
 }
 .ion-chevron-right{
@@ -298,6 +305,11 @@ width:100%;
 
 .item{
   border:none !important;
+   // border-top: rgb(68, 71, 74) 1px solid !important;
+   // border-bottom:none !important;
+   //    border-left:none !important;
+   //       border-right:none !important;
+   margin-bottom: 25px !important;
 }
 .projectphoto img{
     max-width: 100%;
@@ -327,9 +339,11 @@ input[type="text"]{
   color: #FFFFFF !important;
   letter-spacing: 2px;
   font-weight: 200;
-  margin-top: 17px;
+  margin-top: 6px;
   margin-bottom: 0px;
   border-bottom: 1!important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 
 .viewBT .button-outline{
@@ -357,6 +371,7 @@ img.thumbnail {
   margin-left: 2%;
   margin-bottom: 5px;
   margin-top: 5px;
+  height: 80px !important;
 }
 
 .rightDescription {
@@ -366,7 +381,7 @@ img.thumbnail {
   padding-bottom: 0 !important;
 
 h4 {
-    margin-top:3px !important;
+    margin-top:8px !important;
     color: white;
   }
 }
@@ -443,3 +458,28 @@ h4 {
 
 
 
+/* #Asbestos Flat Button
+==================================================*/
+.asbestos-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 60px;
+  padding: 0;
+  font-size: 17px;
+  color:white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #7f8c8d;
+  border: 0;
+  border-bottom: 2px solid #6d7b7c;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #6d7b7c;
+  box-shadow: inset 0 -2px #6d7b7c;
+}
+.asbestos-flat-button.activated {
+  top: 3px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
