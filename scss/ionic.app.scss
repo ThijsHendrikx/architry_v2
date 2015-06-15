@@ -118,6 +118,10 @@ hr{
     margin-top: 0px;
 }
 
+li{
+  list-style: none;
+}
+
 .logo {
   width: 50%;
 
@@ -144,6 +148,12 @@ hr{
     border-bottom-color: transparent !important;
     background-image: none;
     border-bottom: none;
+}
+
+.bar .button {
+border-radius:0 !important;
+width:20% !important;
+ font-size: 14px !important;
 }
 
 .iv { 
@@ -181,6 +191,13 @@ ion-nav-bar .title img{
   height: 115px !important;
   background-color: #869898 !important;
 }
+button.button.back-button.buttons.button-clear.header-item {
+margin-top: 6px !important;
+margin-left: 0 !important;
+  padding: 0 !important;
+  font-size: 17px !important;
+    width: 15% !important;
+  }
 
 .platform-ios{
    .bar-subheader1{
@@ -207,6 +224,8 @@ h4.add{
 
 
 }
+
+
 .item1{
     padding: 0px 0px 0 3% !important;
     border: 1px solid white;
@@ -218,9 +237,24 @@ h4.add{
 
 .item-body h4{
    margin-top: 0px !important;
-  margin-bottom: 1px !important;
+  margin-bottom: 3px !important;
 }
 
+.description.item-body {
+margin-top: 0 !important;
+padding: 0 2% 0 2% !important;
+}
+
+
+.description.item-body p{
+  margin-top: 0 !important;
+  color: white;
+  margin-bottom: 0 !important;
+}
+
+.item-body p {
+    margin-bottom: 7px !important;
+}
 
 .projectphoto{
     width: 100% !important;
@@ -230,43 +264,59 @@ h4.add{
 .projects {
   width: 95% !important;
   /* border: none !important; */
-  margin: -5px auto 0 auto!important;
+  margin: 3px auto 0 auto!important;
    
 
 }
 
 .item-content {
   width: 100% !important;
-  margin-top: 10px !important;
+  margin-top: 5px !important;
   padding-top:4px !important;
   padding-bottom: 4px !important;
   padding-left:0px !important;
   padding-right:0px !important;
+  background: #7f8c8d;
+  border: 0;
+  border-bottom: 2px solid #37383A;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #37383A;
+  box-shadow: inset 0 -2px #37383A;
+
 }
 
 .item .item-content.activated {
-  -o-transition:.2s;
-  -ms-transition:.2s;
-  -moz-transition:.2s;
-  -webkit-transition:.2s;
-  /* border-color: #869898; */
- background-color: #44474a !important;
-  .descriptionProject {
- background-color: #44474a !important;      -o-transition:.2s;
-  -ms-transition:.2s;
-  -moz-transition:.2s;
-  -webkit-transition:.2s;
-  }
-  h3{
-    color:  white !important;
-  }
+  border-color: #ccc;
+  background-color: #D9D9D9;
+  top: 2px;
+   outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-.item-complex .item-content, .item-radio .item-content {
-padding: 0 !important;
-  // padding-top: 8px !important;
-  // padding-bottom: 8px !important;
-}
+// .item .item-content.activated {
+//   -o-transition:.2s;
+//   -ms-transition:.2s;
+//   -moz-transition:.2s;
+//   -webkit-transition:.2s;
+//   /* border-color: #869898; */
+//  background-color: #44474a !important;
+//   .descriptionProject {
+//  background-color: #44474a !important;      -o-transition:.2s;
+//   -ms-transition:.2s;
+//   -moz-transition:.2s;
+//   -webkit-transition:.2s;
+//   }
+//   h3{
+//     color:  white !important;
+//   }
+// }
+
+// .item-complex .item-content, .item-radio .item-content {
+// padding: 0 !important;
+//   // padding-top: 8px !important;
+//   // padding-bottom: 8px !important;
+// }
 
 .descriptionProject p {
   color: white !important;
@@ -280,6 +330,10 @@ padding: 0 !important;
 .button-outline.button-outline.active, .button-outline.button-outline.activated {
   background-color: #2F3134!important;
 
+}
+
+.blauw{
+   background-color: #44474a !important;
 }
 
 .descriptionProject{
@@ -309,7 +363,6 @@ width:100%;
    // border-bottom:none !important;
    //    border-left:none !important;
    //       border-right:none !important;
-   margin-bottom: 25px !important;
 }
 .projectphoto img{
     max-width: 100%;
@@ -339,7 +392,7 @@ input[type="text"]{
   color: #FFFFFF !important;
   letter-spacing: 2px;
   font-weight: 200;
-  margin-top: 6px;
+  margin-top: 10px;
   margin-bottom: 0px;
   border-bottom: 1!important;
   padding-top: 5px !important;
@@ -398,6 +451,7 @@ h4 {
 
 .itemView > .item-content{
    background-color: #44474a !important;
+
 }
 
 .test{
@@ -464,7 +518,7 @@ h4 {
   position: relative;
   vertical-align: top;
   width: 100%;
-  height: 60px;
+  height: 40px;
   padding: 0;
   font-size: 17px;
   color:white;

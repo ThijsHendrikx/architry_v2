@@ -26,14 +26,19 @@
 
       <ion-item class="itemView" ng-repeat="view in project.views" href="#/projects/details/{{view.viewId}}">
 
+<div class="blauw"> 
+
         <img class="thumbnail" ng-src="{{view.imgLeftUrl}}" >
-        <div class="rightDescription  item-body"><h4>{{view.title}}</h4><!-- <div class="description" ><P>Hier kun je de tuin in VR zien.</P></div>  --><button class="viewButton button-outline">
+        <div class="rightDescription  item-body"><h4>1. {{view.title}}</h4><button class="viewButton button-outline">
 View in VR!
 </button>
-</div>
 
 
+</div><div class="clearfix"></div></div>
+
+  <!--  <div class="description item-body" ><P>Hier kun je deze locatie in Virtual reality zien. Let vooral op deze details. Dit en dat zijn deze stenen en mooi duurzaam materiaal. zien.</P></div>  -->
         </ion-item>
+
 
       </ion-list>
       
