@@ -147,9 +147,11 @@ button.button.back-button.buttons.button-clear.header-item {
   width: 15% !important; }
 
 .platform-ios .bar-subheader1 {
-  top: 50px !important; }
+  top: 60px !important; }
 .platform-ios .bar-subheader {
   top: 52px !important; }
+.platform-ios .projects {
+  margin-top: 40px !important; }
 
 .has-subheader1 {
   top: 155px !important; }

@@ -200,13 +200,21 @@ margin-left: 0 !important;
   }
 
 .platform-ios{
-   .bar-subheader1{
-  top: 50px !important;
-}
+  .bar-subheader1{ top: 60px !important;}
+  
   .bar-subheader{
-     top:52px !important;
+       top:52px !important;
+  }
+
+  .projects{
+    margin-top:40px !important;
+  }
+
 }
-}
+
+
+
+
 .has-subheader1 {
   top: 155px !important;
 }
