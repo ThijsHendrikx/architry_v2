@@ -42,7 +42,7 @@ View in VR!
 
       </ion-list>
       
-      <button class="button button-block button-assertive" ng-click="Remove({{project}})">
+      <button class="button button-block button-assertive" ng-click="Remove({{project}})" ng-hide="project.id == -1">
         Remove project
       </button>
 

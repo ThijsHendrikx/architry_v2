@@ -28,8 +28,7 @@
 	        
 	        <li on-hold="onHold(Remove({{project}}))" ng-repeat="project in projects" class="projects" href="#/projects/{{project.id}}">
 
-			    <h3>{{project.title}}</h3>
-<!-- <span class="eyeicon"><img  src='./img/eye.png'></span> -->
+			    <h3>{{project.title}}</h3><!-- <span class="eyeicon"><img  src='./img/eye.png'></span> -->
 			   	<img ng-src="{{project.thumbnail}}">
 			    
 			    <a href="#/projects/{{project.id}}">
@@ -37,8 +36,8 @@
 
 
        			<div  class="descriptionProject item-body "><h4>About the project</h4><p>{{project.description}}</p>
-						<!-- <span class="ion-chevron-right"></span> --><a href="#/projects/{{project.id}}"><button class="asbestos-flat-button">
-View project!</button></a></div>
+						<!-- <span class="ion-chevron-right"></span> -->
+				<a href="#/projects/{{project.id}}"><button class="asbestos-flat-button">View project!</button></a></div>
 
 			</li>
 		</ion-list>

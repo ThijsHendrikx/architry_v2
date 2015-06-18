@@ -67,14 +67,11 @@ angular.module('starter.services', [])
 
 	    add: function(project){
 
-	      var aprojects = JSON.parse(window.localStorage['projects'] || '[]');
+        if(this.get(-1)){
+          this.remove(this.get(-1));
+        }
 
-	      //Delete the test project if exists
-	      for(var i = 0; i < aprojects.length; i++){
-	      	if(parseInt(aprojects[i].id) == -1){
-	      		this.remove(aprojects[i]);
-	      	}
-	      }
+	      var aprojects = JSON.parse(window.localStorage['projects'] || '[]');
 
 	      aprojects.reverse();
 	      aprojects.push( project );
