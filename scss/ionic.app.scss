@@ -229,10 +229,7 @@ margin-left: 0 !important;
 h4.add{
   padding-left: 1%;
     margin-bottom: 6px !important;
-
-
 }
-
 
 .item1{
     padding: 0px 0px 0 3% !important;
@@ -240,7 +237,7 @@ h4.add{
 }
 
 .item-body {
-  padding:0 
+padding-left: 10px !important;
 }
 
 .item-body h4{
@@ -251,6 +248,7 @@ h4.add{
 .description.item-body {
 margin-top: 0 !important;
 padding: 0 2% 0 2% !important;
+  
 }
 
 
@@ -270,7 +268,7 @@ padding: 0 2% 0 2% !important;
 }
 
 .projects {
-  width: 95% !important;
+  width: 100% !important;
   /* border: none !important; */
   margin: 3px auto 0 auto!important;
    

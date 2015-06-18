@@ -170,7 +170,7 @@ h4.add {
   border: 1px solid white; }
 
 .item-body {
-  padding: 0; }
+  padding-left: 10px !important; }
 
 .item-body h4 {
   margin-top: 0px !important;
@@ -193,7 +193,7 @@ h4.add {
   margin: 3px auto; }
 
 .projects {
-  width: 95% !important;
+  width: 100% !important;
   /* border: none !important; */
   margin: 3px auto 0 auto !important; }
 
